@@ -1,12 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, Facebook, Instagram, Share2 } from 'lucide-react';
+import { MessageCircle } from 'lucide-react'; // Keeping only standard, non-brand icons
 
 export default function FloatingSocials() {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Custom pre-filled WhatsApp message URL encoded
   const whatsappNumber = "524731489565";
   const message = encodeURIComponent("¡Hola PatitasGTO! 🐾 Me interesa saber más sobre sus servicios de paseos o productos de la tienda.");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
@@ -21,30 +20,36 @@ export default function FloatingSocials() {
       {/* EXPANDABLE SOCIAL ICONS */}
       <div className={`flex flex-col gap-2 transition-all duration-300 transform ${isHovered ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
         
-        {/* Instagram */}
+        {/* Instagram - Inline SVG */}
         <a 
-          href="https://instagram.com/patitasgto" // Replace with your real URL
+          href="https://instagram.com/patitasgto" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="p-3 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white rounded-full shadow-lg hover:scale-110 transition duration-200"
+          className="p-3 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white rounded-full shadow-lg hover:scale-110 transition duration-200 flex items-center justify-center"
           title="Síguenos en Instagram"
         >
-          <Instagram className="w-5 h-5" />
+          <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
         </a>
 
-        {/* Facebook */}
+        {/* Facebook - Inline SVG */}
         <a 
-          href="https://facebook.com/patitasgto" // Replace with your real URL
+          href="https://facebook.com/patitasgto" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="p-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-110 transition duration-200"
+          className="p-3 bg-blue-600 text-white rounded-full shadow-lg hover:scale-110 transition duration-200 flex items-center justify-center"
           title="Síguenos en Facebook"
         >
-          <Facebook className="w-5 h-5 fill-white" />
+          <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
         </a>
       </div>
 
-      {/* MAIN WHATSAPP BUTTON (Pulsating) */}
+      {/* MAIN WHATSAPP BUTTON */}
       <a 
         href={whatsappUrl}
         target="_blank" 
@@ -52,10 +57,7 @@ export default function FloatingSocials() {
         className="relative p-4 bg-emerald-500 text-white rounded-full shadow-2xl hover:bg-emerald-600 hover:scale-110 transition-all duration-300 group flex items-center justify-center"
         title="Enviar Mensaje de WhatsApp"
       >
-        {/* Pulsing Aura Rings */}
         <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-40 group-hover:opacity-0 transition duration-500"></span>
-        
-        {/* SVG/Icon alternative for clean WhatsApp render */}
         <svg 
           className="w-6 h-6 fill-white" 
           viewBox="0 0 24 24" 
