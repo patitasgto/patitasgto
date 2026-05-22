@@ -17,7 +17,7 @@ export default function Header() {
           <div className="relative w-28 h-24 transition-all duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 filter group-hover:drop-shadow-[0_0_20px_rgba(14,165,233,0.35)]">
             {/* ⚠️ Pro-tip: If you saved your transparent version as a PNG, update the extension here to .png */}
             <Image 
-              src="/cat and dog inside heart logo.png" 
+              src="/logo.png" 
               alt="PatitasGTO Logo" 
               fill
               className="object-contain"

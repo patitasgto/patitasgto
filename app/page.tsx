@@ -63,7 +63,7 @@ export default function HomePage() {
             {/* Main Animated Logo Container */}
             <div className="relative w-72 h-72 sm:w-96 sm:h-96 transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:rotate-2 filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_20px_50px_rgba(34,211,238,0.4)]">
               <Image 
-                src="/cat and dog inside heart logo.jpg" 
+                src="/logo.png" 
                 alt="PatitasGTO Icono Principal" 
                 fill
                 className="object-contain animate-[float_6s_ease-in-out_infinite]"
