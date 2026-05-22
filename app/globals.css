@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 🌓 1. Tailwind v4 Class-Based Dark Mode Switch */
+/* This matches the .dark class injected into the <html> element by next-themes */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 🎨 2. Global Resets & Document Smoothing */
+html {
+  scroll-behavior: smooth;
+  /* Prevent horizontal side-scrolling jitter when items animate */
+  overflow-x: hidden; 
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom highlight color when users select text (Matches Patitas orange) */
+::selection {
+  background-color: #f97316; /* Tailwind orange-500 */
+  color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 🐾 3. The "Sick" Logo Animation Keyframes */
+/* This brings the dynamic float effect to life on your homepage centerpiece */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg); /* Playful drift upwards */
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Binds the keyframe loop to an active utility class used by Next.js */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
