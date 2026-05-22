@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12 bg-white rounded-full p-1">
               <Image 
-                src="/cat and dog inside heart logo.jpg" 
+                src="/logo.png" 
                 alt="PatitasGTO" 
                 fill
                 className="object-contain p-1"
